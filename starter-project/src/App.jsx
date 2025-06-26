@@ -5,9 +5,16 @@ import './App.css'
 import DuckbookLayout from './DuckbookLayout';
 import WelcomeMessage from './WelcomeMessage';
 import DuckButton from './DuckButton';
+import Post from './Post';
 
 function App() {
   const [count, setCount] = useState(0)
+
+  const posts = [
+    {id: 1, author: `Daffy`, content: `Just got a new pond!`},
+    { id: 2, author: `Donald`, content: `Quack attack at 3pm. Who's in?`},
+    {id: 3, author: `Scrooge`, content: `Investing in breadcrumbs`}
+  ]
 
   return (
     <>
@@ -37,6 +44,10 @@ function App() {
       <DuckButton label = "Add Friend" />
       <DuckButton label = "Message" />
       <DuckButton label = "Waddle Away" />
+      <hr />
+      {posts.map(post => (
+        <Post key = {post.id} author={post.author} content={post.content} />
+      ))}
     </DuckbookLayout>
     </>
   )
