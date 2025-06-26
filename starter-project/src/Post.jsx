@@ -1,6 +1,10 @@
+import {useState } from 'react';
+
 export default function Post({author, content}) {
+    const [likes, setLikes] = useState(0);
+
     function handleLikeClick() {
-        console.log(`Liked post by ${author}`);
+        setLikes(likes + 1);
     }
     return (
         <div style={{
@@ -21,7 +25,7 @@ export default function Post({author, content}) {
                 borderRadisu: '4px',
                 cursor: 'pointer'
             }}>
-                Like
+                Like ({likes})
                 </button>
         </div>
     );
