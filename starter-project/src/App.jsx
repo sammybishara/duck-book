@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import DuckbookLayout from './DuckbookLayout';
 import WelcomeMessage from './WelcomeMessage';
+import DuckButton from './DuckButton';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -33,6 +34,9 @@ function App() {
 
     <DuckbookLayout>
       <WelcomeMessage />
+      <DuckButton label = "Add Friend" />
+      <DuckButton label = "Message" />
+      <DuckButton label = "Waddle Away" />
     </DuckbookLayout>
     </>
   )
