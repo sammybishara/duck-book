@@ -5,6 +5,7 @@ import './App.css'
 import DuckbookLayout from './DuckbookLayout';
 import WelcomeMessage from './WelcomeMessage';
 import DuckButton from './DuckButton';
+import PostForm from './PostForm';
 import Post from './Post';
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
     {id: 1, author: `Daffy`, content: `Just got a new pond!`},
     { id: 2, author: `Donald`, content: `Quack attack at 3pm. Who's in?`},
     {id: 3, author: `Scrooge`, content: `Investing in breadcrumbs`}
-  ]
+  ];
 
   return (
     <>
@@ -45,6 +46,7 @@ function App() {
       <DuckButton label = "Message" />
       <DuckButton label = "Waddle Away" />
       <hr />
+      <PostForm />
       {posts.map(post => (
         <Post key = {post.id} author={post.author} content={post.content} />
       ))}
