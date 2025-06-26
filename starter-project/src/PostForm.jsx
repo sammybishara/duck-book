@@ -1,12 +1,12 @@
 import {useState} from 'react';
 
-export default function PostForm() {
+export default function PostForm( {onSubmit} ) {
     const [author, setAuthor] = useState('');
     const [content, setContent] = useState('');
 
     function handleSubmit(event) {
         event.preventDefault();
-        console.log('how post:', {author, content});
+        onSubmit({author, content});
         setAuthor('');
         setContent('');
     }

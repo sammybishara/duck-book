@@ -11,11 +11,15 @@ import Post from './Post';
 function App() {
   const [count, setCount] = useState(0)
 
-  const posts = [
+  const [posts, setPosts] = useState([
     {id: 1, author: `Daffy`, content: `Just got a new pond!`},
     { id: 2, author: `Donald`, content: `Quack attack at 3pm. Who's in?`},
     {id: 3, author: `Scrooge`, content: `Investing in breadcrumbs`}
-  ];
+  ]);
+
+  function addPost(newPost) {
+    setPosts([{id: Date.now(), ...newPost }, ...posts]);
+  }
 
   return (
     <>
@@ -46,7 +50,7 @@ function App() {
       <DuckButton label = "Message" />
       <DuckButton label = "Waddle Away" />
       <hr />
-      <PostForm />
+      <PostForm onSubmit = {addPost}/>
       {posts.map(post => (
         <Post key = {post.id} author={post.author} content={post.content} />
       ))}
